@@ -174,9 +174,9 @@ API
 
 ## Tech Stack
 
-**Routing:** `React Router`, The standar for React SPAs
-**Styling**: `</>styled components`, Very populer way of writig componet-scopped CSS, right inside Jacvascript. A techology worth learning
-**Remote state management:** `ReactQuery`, The best way of managing remote state, with features like caching, automatic re-fetching, offline support, etc.
-**UI State management:** `Context API`, there is almost no UI state needed in this app, so one simple context with useState will be enough. No need redx
-**Form menegement:** `React Hook Form`, Handling bigger forms can be a lot of work, such as maual satate creation and error handling . A library can cimplify all this
-**Otehrs tools:** `React icons`, `React hot toast`, `Recharts`, `date-fns`, `supabase`
+- **Routing:** `React Router`, The standar for React SPAs
+- **Styling**: `</>styled components`, Very populer way of writig componet-scopped CSS, right inside Jacvascript. A techology worth learning
+- **Remote state management:** `ReactQuery`, The best way of managing remote state, with features like caching, automatic re-fetching, offline support, etc.
+- **UI State management:** `Context API`, there is almost no UI state needed in this app, so one simple context with useState will be enough. No need redx
+- **Form menegement:** `React Hook Form`, Handling bigger forms can be a lot of work, such as maual satate creation and error handling . A library can cimplify all this
+- **Otehrs tools:** `React icons`, `React hot toast`, `Recharts`, `date-fns`, `supabase`
