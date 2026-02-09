@@ -1,6 +1,8 @@
-# Building the app layout
+import { Outlet } from "react-router";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import styled from "styled-components";
 
-```jsx
 const StyledAppLayout = styled.div`
   display: grid;
   grid-template-columns: 26rem 1fr;
@@ -24,6 +26,5 @@ function AppLayout() {
     </StyledAppLayout>
   );
 }
-```
 
-Next: [Bulding sidebar and main nav](./07-bulding-sidebar-and-main-nav.md)
+export default AppLayout;
