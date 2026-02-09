@@ -39,7 +39,7 @@ const NoActivity = styled.p`
 function Today() {
   return (
     <StyledToday>
-      <Row type="horizontal">
+      <Row inputProp="horizontal">
         <Heading as="h2">Today</Heading>
       </Row>
     </StyledToday>

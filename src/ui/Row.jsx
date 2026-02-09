@@ -18,4 +18,8 @@ const Row = styled.div`
     `}
 `;
 
+Row.defaultProps = {
+  itemProp: "vertical",
+};
+
 export default Row;
