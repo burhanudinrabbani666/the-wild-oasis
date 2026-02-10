@@ -35,7 +35,7 @@ function CheckinBooking() {
 
   return (
     <>
-      <Row inputProp="horizontal">
+      <Row itemProp="horizontal">
         <Heading as="h1">Check in booking #{bookingId}</Heading>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>

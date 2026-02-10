@@ -64,7 +64,7 @@ export default Row;
 {
   /* Horizontal Row - items side by side */
 }
-<Row inputProp="horizontal">
+<Row itemProp="horizontal">
   <Heading as="h1">The Wild Oasis</Heading>
   <Button>Click me</Button>
 </Row>;
@@ -72,7 +72,7 @@ export default Row;
 {
   /* Vertical Row - items stacked */
 }
-<Row inputProp="vertical">
+<Row itemProp="vertical">
   <Heading as="h3">Form</Heading>
   <Input placeholder="Enter text" />
 </Row>;
@@ -218,9 +218,9 @@ function App() {
 
       <StyledApp>
         {/* Main vertical container */}
-        <Row inputProp="vertical">
+        <Row itemProp="vertical">
           {/* Header section - horizontal layout */}
-          <Row inputProp="horizontal">
+          <Row itemProp="horizontal">
             <Heading as="h1">The Wild Oasis</Heading>
 
             <div>
@@ -247,7 +247,7 @@ function App() {
           </Row>
 
           {/* Form section - vertical layout */}
-          <Row inputProp="vertical">
+          <Row itemProp="vertical">
             <Heading as="h3">Form</Heading>
             <form>
               <Input type="number" placeholder="Number of guests" />
@@ -396,7 +396,7 @@ ${(props) => sizes[props.size || "medium"]}
 
 ```jsx
 // Layout components
-<Row inputProp="horizontal" gap="large" />
+<Row itemProp="horizontal" gap="large" />
 <Grid columns={3} />
 
 // UI components

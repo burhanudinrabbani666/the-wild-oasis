@@ -3,7 +3,7 @@ import Row from "../ui/Row";
 
 function Bookings() {
   return (
-    <Row inputProp="horizontal">
+    <Row itemProp="horizontal">
       <Heading as="h1">All bookings</Heading>
       <p>TEST</p>
     </Row>
