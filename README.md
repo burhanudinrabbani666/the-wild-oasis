@@ -31,9 +31,9 @@ All learning materials are organized into sections with detailed notes and examp
 
 | Section | Topics                                                                                    | Status         |
 | ------- | ----------------------------------------------------------------------------------------- | -------------- |
-| 1       | [Styled Components](./notes/01-styled-components/01-introduction-to-styled-components.md) | ✍️ In Progress |
-| 2       | [Supabase Crash Course](./notes/02-supabase/)                                             | ⏳ Pending     |
-| 3       | [React Query](./notes/03-react-query/)                                                    | ⏳ Pending     |
+| 1       | [Styled Components](./notes/01-styled-components/01-introduction-to-styled-components.md) | ✅ Completed   |
+| 2       | [Supabase Crash Course](./notes/02-supabase/)                                             | ✅ Completed   |
+| 3       | [React Query](./notes/03-react-query/)                                                    | ✍️ On progress |
 | 4       | [React Patterns](./notes/04-react-patterns/)                                              | ⏳ Pending     |
 | 5       | [Additional Features](./notes/05-more-features/)                                          | ⏳ Pending     |
 

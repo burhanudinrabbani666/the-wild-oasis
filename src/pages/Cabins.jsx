@@ -11,6 +11,10 @@ function Cabins() {
   return (
     <Row itemProp="horizontal">
       <Heading as="h1">All cabins</Heading>
+      <img
+        src="https://oobhmhdqjancbyfnwdul.supabase.co/storage/v1/object/public/cabin-image/cabin-001.jpg"
+        alt="cabin1"
+      />
       <p>TEST</p>
     </Row>
   );
