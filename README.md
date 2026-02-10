@@ -1,11 +1,24 @@
-# The project: The wild Oasis
+<div align="center">
+  <img src="./public/image.png" alt="Logo" width="250"/>
+</div>
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+<div align="center">
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScrpi"/>
+  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React"/>
+  <img src="https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white" alt="React Hook Form"/>
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React Router"/>
+  <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styled Components"/>
+  <img src="https://img.shields.io/badge/Context--Api-000000?style=for-the-badge&logo=react" alt="Context API"/>
+  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase"/>
+  <img src="https://img.shields.io/badge/Udemy-A435F0?style=for-the-badge&logo=Udemy&logoColor=white" alt="Udemy"/>
+  <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)" alt="Netlify"/>
+  <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  <img src="" alt=""/>
+  <img src="" alt=""/>
+</div>
 
-# The Wild Oasis - Hotel Management Dashboard
+# The Wild Oasis
 
 ## Overview
 
@@ -175,7 +188,7 @@ API
 ## Tech Stack
 
 - **Routing:** `React Router`, The standar for React SPAs
-- **Styling**: `</>styled components`, Very populer way of writig componet-scopped CSS, right inside Jacvascript. A techology worth learning
+- **Styling**: `</img>styled components`, Very populer way of writig componet-scopped CSS, right inside Jacvascript. A techology worth learning
 - **Remote state management:** `ReactQuery`, The best way of managing remote state, with features like caching, automatic re-fetching, offline support, etc.
 - **UI State management:** `Context API`, there is almost no UI state needed in this app, so one simple context with useState will be enough. No need redx
 - **Form menegement:** `React Hook Form`, Handling bigger forms can be a lot of work, such as maual satate creation and error handling . A library can cimplify all this
