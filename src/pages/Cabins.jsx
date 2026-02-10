@@ -11,7 +11,7 @@ function Cabins() {
         <p>Filter / sort</p>
       </Row>
 
-      <Row>
+      <Row itemProp="vertical">
         <CabinTable></CabinTable>
       </Row>
     </>
