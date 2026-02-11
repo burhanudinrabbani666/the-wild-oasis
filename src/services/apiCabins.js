@@ -11,7 +11,7 @@ export async function getCabins() {
   return data;
 }
 
-export async function deletingCabins(id) {
+export async function deletingCabin(id) {
   const { data, error } = await supabase.from("cabins").delete().eq("id", id);
 
   if (error) {
@@ -23,10 +23,7 @@ export async function deletingCabins(id) {
 }
 
 export async function createEditCabin(newCabin, id) {
-  console.log(newCabin, id);
-
   const hasImagePath = newCabin.image?.startWith?.(supabaseUrl);
-  console.log(hasImagePath);
 
   const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
     "/",
