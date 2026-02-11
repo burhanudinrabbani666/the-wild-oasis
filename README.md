@@ -46,8 +46,8 @@ All learning materials are organized into sections with detailed notes and examp
 | ------- | ----------------------------------------------------------------------------------------- | -------------- |
 | 1       | [Styled Components](./notes/01-styled-components/01-introduction-to-styled-components.md) | ✅ Completed   |
 | 2       | [Supabase Crash Course](./notes/02-supabase/)                                             | ✅ Completed   |
-| 3       | [React Query](./notes/03-react-query/)                                                    | ✍️ On progress |
-| 4       | [React Patterns](./notes/04-react-patterns/)                                              | ⏳ Pending     |
+| 3       | [React Query](./notes/03-react-query/)                                                    | ✅ Completed   |
+| 4       | [React Patterns](./notes/04-react-patterns/)                                              | ✍️ On progress |
 | 5       | [Additional Features](./notes/05-more-features/)                                          | ⏳ Pending     |
 
 ## Tech Stack
@@ -62,7 +62,12 @@ All learning materials are organized into sections with detailed notes and examp
 
 ## Key Learnings
 
-This section will be updated as I progress through the course:
+- Using styled Components for styling HTML element in JavaScript
+- Understanding basic supabase
+- Implement CRUD using React query
+- Form submition with React Hook Form
+- Handling updload Photo to Supabase
+- Abstracting React Query to useCustom Hooks
 
 ### Currently Learning
 
