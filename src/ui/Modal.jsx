@@ -1,3 +1,5 @@
+import { createPortal } from "react-dom";
+import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
 
 const StyledModal = styled.div`
@@ -48,3 +50,21 @@ const Button = styled.button`
     color: var(--color-grey-500);
   }
 `;
+
+function Modal({ children, onClose }) {
+  // this make modal never get cutoff of other css element because this createPortal syntax make components in very top html
+  return createPortal(
+    <Overlay>
+      <StyledModal>
+        <Button onClick={onClose}>
+          <HiXMark />
+        </Button>
+
+        <div>{children}</div>
+      </StyledModal>
+    </Overlay>,
+    document.body,
+  );
+}
+
+export default Modal;
