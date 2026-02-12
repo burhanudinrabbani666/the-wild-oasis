@@ -90,11 +90,16 @@ function Row({ children }) {
   );
 }
 
-// function Body({ children }) {}
+// render props pattern
+function Body({ data, render }) {
+  if (!data.length) return <Empty>No data to show at the moment</Empty>;
+
+  return <StyledBody>{data.map(render)}</StyledBody>;
+}
 
 Table.Header = Header;
 Table.Row = Row;
-// Table.Body = Body;
+Table.Body = Body;
 Table.Footer = Footer;
 
 export default Table;
