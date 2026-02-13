@@ -133,8 +133,8 @@ API
 
 ### Cabins
 
-- App needs a table view with all cabins, showing the cabin photo, name, capacity, price, and current discount
-- Users should be able to update or delete a cabin, and to create new cabins (including uploading a photo)
+- App needs a table view with all cabins, showing the cabin photo, name, capacity, price, and current discount ✅
+- Users should be able to update or delete a cabin, and to create new cabins (including uploading a photo) ✅
 
 ### Bookings
 
@@ -162,7 +162,7 @@ API
 
 ### settings
 
-- Users should be able to define a few application-wide settings: breakfast price, min and max nights/booking, max guests/booking
+- Users should be able to define a few application-wide settings: breakfast price, min and max nights/booking, max guests/booking ✅
 - App needs a dark mode
 
 | Features Cateories | necessary pages                        |
