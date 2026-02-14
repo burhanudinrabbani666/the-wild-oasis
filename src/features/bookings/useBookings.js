@@ -13,9 +13,9 @@ export function useBookings() {
       : { field: "status", value: filterValue };
 
   // SORT
-  const sortByRaw = searchParams.get("sotyBy") || "startDate-esc";
-  const [field, direcion] = sortByRaw.split("-");
-  const sortBy = { field, direcion };
+  const sortByRaw = searchParams.get("sortBy") || "startDate-esc";
+  const [field, direction] = sortByRaw.split("-");
+  const sortBy = { field, direction };
 
   const {
     data,
