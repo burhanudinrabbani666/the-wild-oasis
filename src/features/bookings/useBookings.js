@@ -12,11 +12,12 @@ export function useBookings() {
       ? null
       : { field: "status", value: filterValue };
 
-  // SORT
+  // Sort
   const sortByRaw = searchParams.get("sortBy") || "startDate-esc";
   const [field, direction] = sortByRaw.split("-");
   const sortBy = { field, direction };
 
+  // Pagination
   const page = !searchParams.get("page") ? 1 : Number(searchParams.get("page"));
 
   const {
