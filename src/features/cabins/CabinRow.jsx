@@ -51,7 +51,7 @@ const Discount = styled.div`
 `;
 
 function CabinRow({ cabin }) {
-  const { id, name, maxCapacity, regulerPrice, discount, image, description } =
+  const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
   const { createCabin } = useCreateCabin();
 
@@ -59,7 +59,7 @@ function CabinRow({ cabin }) {
     createCabin({
       name: `Copy of ${name}`,
       maxCapacity,
-      regulerPrice,
+      regularPrice,
       discount,
       description,
       image,
@@ -73,7 +73,7 @@ function CabinRow({ cabin }) {
       <Img src={image} />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity} guest</div>
-      <Price>{formatCurrency(regulerPrice)}</Price>
+      <Price>{formatCurrency(regularPrice)}</Price>
       {discount ? (
         <Discount>{formatCurrency(discount)}</Discount>
       ) : (

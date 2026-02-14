@@ -1,4 +1,4 @@
-import { formatDistance, parseISO } from "date-fns";
+import { differenceInDays, formatDistance, parseISO } from "date-fns";
 // import { differenceInDays } from "date-fns/esm";
 
 // We want to make this function work for both Date objects and strings (which come from Supabase)
