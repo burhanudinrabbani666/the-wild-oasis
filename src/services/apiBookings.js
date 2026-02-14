@@ -1,5 +1,23 @@
+import toast from "react-hot-toast";
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
+
+export async function getBookings() {
+  try {
+    const { data, error } = await supabase
+      .from("bookings")
+      .select("*, cabins(name), guests(fullName, email)");
+
+    if (error) {
+      console.log(error);
+      throw new Error("Bookings could not be loaded");
+    }
+
+    return { data };
+  } catch (error) {
+    toast(error.message);
+  }
+}
 
 export async function getBooking(id) {
   const { data, error } = await supabase
@@ -55,7 +73,7 @@ export async function getStaysTodayActivity() {
     .from("bookings")
     .select("*, guests(fullName, nationality, countryFlag)")
     .or(
-      `and(status.eq.unconfirmed,startDate.eq.${getToday()}),and(status.eq.checked-in,endDate.eq.${getToday()})`
+      `and(status.eq.unconfirmed,startDate.eq.${getToday()}),and(status.eq.checked-in,endDate.eq.${getToday()})`,
     )
     .order("created_at");
 
