@@ -138,9 +138,9 @@ API
 
 ### Bookings
 
-- App needs a table view with all bookings, showing arrival and departure dates, status, and paid amount, as well as cabin and guest data
-- The booking status can be “unconfirmed” (booked but not yet checked in), “checked in”, or “checked out”. The table should be filterable by this important status
-- Other booking data includes: number of guests, number of nights, guest observations, whether they booked breakfast, breakfast price
+- App needs a table view with all bookings, showing arrival and departure dates, status, and paid amount, as well as cabin and guest data ✅
+- The booking status can be “unconfirmed” (booked but not yet checked in), “checked in”, or “checked out”. The table should be filterable by this important status ✅
+- Other booking data includes: number of guests, number of nights, guest observations, whether they booked breakfast, breakfast price✅
 
 ### Check in/out
 
@@ -150,7 +150,7 @@ API
 
 ### Guest
 
-- Guest data should contain: full name, email, national ID, nationality, and a country flag for easy identification
+- Guest data should contain: full name, email, national ID, nationality, and a country flag for easy identification ✅
 
 ### Dashboard
 
