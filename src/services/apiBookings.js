@@ -30,7 +30,7 @@ export async function getBookings({ filter, sortBy, page }) {
     const { data, error, count } = await query;
 
     if (error) {
-      console.log(error);
+      console.log(error.message);
       throw new Error("Bookings could not be loaded");
     }
 
