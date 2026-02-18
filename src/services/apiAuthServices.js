@@ -22,3 +22,9 @@ export async function getCurrentUser() {
 
   return data.user;
 }
+
+export async function logout() {
+  const { error } = await supabase.auth.signOut(); // Delete authentication from local storage
+
+  if (error) throw new Error(error.message);
+}
