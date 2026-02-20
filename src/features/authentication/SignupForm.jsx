@@ -4,14 +4,17 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 
 import { useForm } from "react-hook-form";
+import { useSignUp } from "./useSignUp";
 //
 
 function SignupForm() {
-  const { register, formState, getValues, handleSubmit } = useForm();
+  const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
 
-  function onSubmit(data) {
-    console.log(data);
+  const { signUp, signUpLoading } = useSignUp();
+
+  function onSubmit({ fullName, email, password }) {
+    signUp({ fullName, email, password }, { onSettled: () => reset() });
   }
 
   return (
@@ -20,6 +23,7 @@ function SignupForm() {
         <Input
           type="text"
           id="fullName"
+          disabled={signUpLoading}
           {...register("fullname", { required: "This Field is required" })}
         />
       </FormRow>
@@ -28,6 +32,7 @@ function SignupForm() {
         <Input
           type="email"
           id="email"
+          disabled={signUpLoading}
           {...register("email", {
             required: "This Field is required",
             pattern: {
@@ -45,6 +50,7 @@ function SignupForm() {
         <Input
           type="password"
           id="password"
+          disabled={signUpLoading}
           {...register("password", {
             required: "This Field is required",
             minLength: {
@@ -59,6 +65,7 @@ function SignupForm() {
         <Input
           type="password"
           id="passwordConfirm"
+          disabled={signUpLoading}
           {...register("passwordConfirm", {
             required: "This Field is required",
             validate: (value) =>
@@ -69,7 +76,7 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset">
+        <Button variation="secondary" type="reset" disabled={signUpLoading}>
           Cancel
         </Button>
         <Button>Create new user</Button>

@@ -119,4 +119,73 @@ validate: (value) =>
   value === getValues().password || "Passwords need to match";
 ```
 
+---
+
+## API Sign Up Function
+
+```js
+export async function signup({ fullName, email, password }) {
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: { data: { fullName, avatar: "" } }, // Metadata
+  });
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+```
+
+Creates user in `auth.users`, stores fullName in metadata, sends confirmation email.
+
+## Custom useSignup Hook
+
+```js
+export function useSignup() {
+  const { mutate: signup, isPending: isSigningUp } = useMutation({
+    mutationFn: signupApi,
+    onSuccess: () => {
+      toast.success("Account created! Please verify your email.");
+    },
+    onError: (error) => toast.error(error.message),
+  });
+
+  return { signup, isSigningUp };
+}
+```
+
+No navigation — user must verify email first. Form resets via `onSettled` in component.
+
+---
+
+## Complete Sign Up Flow
+
+1. User fills form → validated on blur
+2. Clicks "Create" → `handleSubmit` validates all fields
+3. If valid → `signup({ fullName, email, password })` called
+4. Form disabled during submission
+5. Supabase creates user → sends confirmation email
+6. Success toast → form resets
+
+---
+
+## Key Benefits
+
+✓ **Client-Side Validation**: Instant feedback before submission  
+✓ **Cross-Field Validation**: Password confirmation match  
+✓ **Email Verification**: Supabase sends confirmation email  
+✓ **Metadata Storage**: Full name stored with user  
+✓ **Disabled States**: Prevents duplicate submissions
+
+---
+
+## Important Notes
+
+⚠️ **Email Verification**: Users must verify email before logging in (Supabase default)  
+⚠️ **Fixed Typos**: "fullname" → "fullName", "minimun" → "minimum", "Provide" → "provide"  
+⚠️ **Metadata vs Profile**: `options.data` is auth metadata, separate from custom profile tables  
+⚠️ **Reset Pattern**: Use `onSettled` to reset form regardless of success/error
+
+---
+
 **Next Step:** [Authorization on Supabase](./21-authorization-on-supabase.md)
