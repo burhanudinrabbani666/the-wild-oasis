@@ -6,7 +6,7 @@ function Settings() {
   return (
     <Row itemProp="vertical">
       <Heading as="h1">Update hotel settings</Heading>
-      <UpdateSettingsForm />;
+      <UpdateSettingsForm />
     </Row>
   );
 }
