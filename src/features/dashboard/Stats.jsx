@@ -1,8 +1,12 @@
-# Displaying Stats
+import {
+  HiOutlineBanknotes,
+  HiOutlineBriefcase,
+  HiOutlineCalendarDays,
+  HiOutlineChartBar,
+} from "react-icons/hi2";
+import Stat from "./Stat";
+import { formatCurrency } from "../../utils/helpers";
 
-Creat Stats components and inclucding stat component
-
-```jsx
 function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
   // 1.
   const numBookings = bookings.length;
@@ -50,39 +54,3 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
 }
 
 export default Stats;
-```
-
-`DashboardLayout.jsx`
-
-```jsx
-function DashboardLayout() {
-  const { isPending, bookings } = useRecentBooking();
-  const {
-    isPending: staysLoading,
-    stays,
-    confirmStays,
-    numDays,
-  } = useRecentStays();
-  const { cabins, isPending: cabinLoading } = useCabin();
-
-  if (isPending || staysLoading || cabinLoading) return <Spinner />;
-
-  return (
-    <StyledDashboardLayout>
-      <Stats
-        bookings={bookings}
-        confirmedStays={confirmStays}
-        numDays={numDays}
-        cabinCount={cabins.length}
-      />
-      <div>Todays activity</div>
-      <div>Chart stay duration</div>
-      <div>Chart sales</div>
-    </StyledDashboardLayout>
-  );
-}
-
-export default DashboardLayout;
-```
-
-Next: [Displaying a line chart](./27-displaying-a-line-chart.md)
