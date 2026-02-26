@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import {
+  Cell,
+  Label,
+  LabelList,
   Legend,
   Pie,
   PieChart,
@@ -8,6 +11,8 @@ import {
   Sector,
   Tooltip,
 } from "recharts";
+import { data } from "react-router";
+import { useDarkMode } from "../../context/UseDarkMode";
 
 const ChartBox = styled.div`
   /* Box */
@@ -35,17 +40,17 @@ const startDataLight = [
   },
   {
     duration: "2 nights",
-    value: 3,
+    value: 0,
     color: "#f97316",
   },
   {
     duration: "3 nights",
-    value: 5,
+    value: 0,
     color: "#eab308",
   },
   {
     duration: "4-5 nights",
-    value: 7,
+    value: 0,
     color: "#84cc16",
   },
   {
@@ -55,7 +60,7 @@ const startDataLight = [
   },
   {
     duration: "8-14 nights",
-    value: 2,
+    value: 0,
     color: "#14b8a6",
   },
   {
@@ -141,37 +146,68 @@ function prepareData(startData, stays) {
 }
 
 function DurationChart({ confirmedStays }) {
+  const { isDarkMode } = useDarkMode();
+  const startData = isDarkMode ? startDataDark : startDataLight;
+  const data = prepareData(startData, confirmedStays);
+
   // recharts 4.0+
-  const myCustomPie = (props) => (
-    <Sector {...props} fill={startDataLight[props.index].color} />
-  );
+  const myCustomPie = (props) => {
+    return <Sector {...props} fill={props.payload.color} />;
+  };
+  const RADIAN = Math.PI / 180;
+
+  const renderCustomLabel = ({
+    cx,
+    cy,
+    midAngle,
+    outerRadius,
+    index,
+    data,
+  }) => {
+    const entry = data[index];
+
+    // Skip label if value is too small
+    if (entry.value < 1) return null;
+
+    const radius = outerRadius + 30;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+      <text
+        x={x}
+        y={y}
+        fill={entry.color}
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+        fontSize={16}
+      >
+        {entry.duration}
+      </text>
+    );
+  };
 
   return (
     <ChartBox>
       <Heading as="h2">Stay Duration summary</Heading>
 
-      <ResponsiveContainer width={"100%"} height={240}>
+      <ResponsiveContainer width={"100%"} height={300}>
         <PieChart>
           <Pie
-            data={startDataLight}
+            data={data}
             nameKey="duration"
             dataKey="value"
             innerRadius={85}
             outerRadius={110}
-            cx="40%"
+            cx="50%"
             cy="50%"
             paddingAngle={3}
             shape={myCustomPie}
+            label={(props) => renderCustomLabel({ ...props, data })}
+            labelLine={false}
           ></Pie>
+
           <Tooltip />
-          <Legend
-            verticalAlign="middle"
-            align="right"
-            width="30%"
-            layout="vertical"
-            iconSize={10}
-            iconType="circle"
-          />
         </PieChart>
       </ResponsiveContainer>
     </ChartBox>
