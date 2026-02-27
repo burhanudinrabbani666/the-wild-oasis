@@ -27,7 +27,7 @@ function ProtectedRoute({ children }) {
   if (userLoading)
     return (
       <FullPage>
-        <Spinner />;
+        <Spinner />
       </FullPage>
     );
 
