@@ -11,17 +11,16 @@ import { useUpdateUser } from "./useUpdateUser";
 
 function UpdateUserDataForm() {
   // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
-  const {
-    user: {
-      email,
-      user_metadata: { fullName: currentFullName },
-    },
-  } = useUser();
-
+  const { user } = useUser();
   const { updateUser, updating } = useUpdateUser();
 
-  const [fullName, setFullName] = useState(currentFullName);
+  // Initialize with empty/default values to avoid conditional hook calls
+  const [fullName, setFullName] = useState(user?.user_metadata?.fullName || "");
   const [avatar, setAvatar] = useState(null);
+
+  if (!user || !user.user_metadata) return null;
+
+  const email = user.email;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -40,7 +39,7 @@ function UpdateUserDataForm() {
   }
 
   function handleCancel() {
-    setFullName(currentFullName);
+    setFullName(user?.user_metadata?.fullName || "");
     setAvatar(null);
   }
 
